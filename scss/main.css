@@ -1,0 +1,332 @@
+@font-face {
+  font-family: Poppins;
+  src: url("../Poppins/Poppins-Light.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+header {
+  padding: 1.2rem 2%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
+}
+
+header .logo {
+  cursor: pointer;
+}
+
+header .board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header .board .score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20rem;
+}
+
+header .board .score h1 {
+  letter-spacing: 0.1rem;
+  color: #247414;
+  font-size: 1.8rem;
+}
+
+header .board .score p {
+  color: #247414;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+header .board .highScore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20rem;
+}
+
+header .board .highScore h1 {
+  color: #fa314a;
+  font-size: 1.8rem;
+}
+
+header .board .highScore p {
+  color: #fa314a;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.container {
+  width: 100%;
+  background-color: #eee;
+}
+
+.container .time {
+  margin-top: 2rem;
+  color: #fa314a;
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: center;
+}
+
+.container .time .seconds {
+  color: #247414;
+}
+
+.container .main-container {
+  margin: 0 auto;
+  padding: 3rem 3%;
+  width: 100%;
+  max-width: 120rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2rem;
+}
+
+@media (max-width: 450px) {
+  .container .main-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.container .main-container .box {
+  background-color: #fff;
+  height: 10.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.container .main-container .box img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-animation: animatedImg 200ms linear forwards;
+          animation: animatedImg 200ms linear forwards;
+}
+
+@-webkit-keyframes animatedImg {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes animatedImg {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@media (max-width: 300px) {
+  .container .main-container .box img {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.popUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 100000;
+}
+
+.popUp.startGame {
+  -webkit-animation: startGame 250ms linear forwards;
+          animation: startGame 250ms linear forwards;
+}
+
+@-webkit-keyframes startGame {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    display: none;
+  }
+}
+
+@keyframes startGame {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    display: none;
+  }
+}
+
+.popUp.animated {
+  -webkit-animation: animate 250ms linear forwards;
+          animation: animate 250ms linear forwards;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.popUp .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.popUp .content .reacting {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.popUp .content .react {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.popUp .content .gamer {
+  -webkit-transform: scale(3);
+          transform: scale(3);
+  margin-bottom: 6rem;
+}
+
+.popUp .content .scorer {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.popUp .content .myscore {
+  display: inline;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.popUp .content .reply {
+  font-size: 1.4rem;
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  border: 0.1rem solid #fa314a;
+  background-color: #fa314a;
+  color: #fff;
+  border-radius: 5rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+.popUp .content .reply:hover {
+  background-color: #fff;
+  color: #fa314a;
+}
+/*# sourceMappingURL=main.css.map */
