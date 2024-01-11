@@ -7,17 +7,24 @@ const popUp = document.querySelector(".popUp");
 const reply = document.querySelector(".reply");
 const point = document.querySelector(".myscore");
 const scorer = document.querySelector(".scorer");
+const selectSeconds = document.getElementById("itemSelect")
 
-let score, time, interval;
+let score, interval;
+
+let time = Number(selectSeconds.value)
 
 let HiScoreValue = localStorage.getItem("HiScore");
 
 hiScore.innerHTML = HiScoreValue ? HiScoreValue : "00";
 
+selectSeconds.addEventListener("change", (e) => {
+  time = Number(selectSeconds.value)
+} )
+
 reply.addEventListener("click", (e) => {
   popUp.classList.remove("animated");
   popUp.classList.add("startGame");
-  time = 2;
+ 
   score = 0;
   scores.innerHTML = score <= 9 ? "0" + score : score;
   hiScore.innerHTML = localStorage.getItem("HiScore")
@@ -37,7 +44,7 @@ reply.addEventListener("click", (e) => {
 boxes.forEach((box) => {
   box.addEventListener("click", (e) => {
     if (box.classList.contains("activator")) {
-      time = 2;
+      time = Number(selectSeconds.value);
       getRandomPlace();
       score++;
       showScore();
